@@ -10,6 +10,11 @@ class AddressListing extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+
+        const card = this.shadowRoot.querySelector('.address-card');
+        card.addEventListener('click', () => {
+            window.location.href = `/update-address.html?id=${this.getAttribute('id')}`;
+        })
     }
 
     setUiData(){

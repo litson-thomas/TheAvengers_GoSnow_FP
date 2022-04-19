@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
     <link rel="stylesheet" href="css/styles.css">
     <div class="address-card transition">
-        <a class="delete-icon">&#10084;</a>
+        <a class="delete-icon">&#10060;</a>
         <div class="address-card-info">
             <div class="details">
                 <h4>36 Forest Manor</h4>
@@ -27,8 +27,6 @@ class AddressCard extends HTMLElement {
         const deleteButton = this.shadowRoot.querySelector('.address-card .delete-icon');
         deleteButton.addEventListener('click', (e) => {
             e.stopPropagation();
-            debugger;
-            alert("Address deleted");
             let savedListing = localStorage.getItem('savedAddressListing');
             let id = Number(this.getAttribute('id'));
 
@@ -44,7 +42,6 @@ class AddressCard extends HTMLElement {
         const card = this.shadowRoot.querySelector('.address-card');
         card.addEventListener('click', () => {
             window.location.href = `/update-address.html?id=${this.getAttribute('id')}`;
-            
         })
     }
 
