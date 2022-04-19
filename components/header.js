@@ -6,7 +6,7 @@ template.innerHTML = `
             <div class="header-details">
                 <h1 class="logo">Hey, <br> Welcome user!</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur 
-                adipiscing elit. Sit venenatis non urna, suspendisse.</p>
+                adipiscing elit. <br> Sit venenatis non urna, suspendisse.</p>
             </div>
             <nav>
                 <div class="links">

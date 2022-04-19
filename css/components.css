@@ -14,6 +14,9 @@
     align-items: flex-start;
     flex-wrap: wrap;
 }
+.header-details{
+    flex: 1;
+}
 .header-details p{
     color: #ffffff65;
 }
@@ -330,4 +333,63 @@
 .details-wrapper .actions a:first-child{
     margin-right: 0.5rem;
     background: var(--secondary)
+}
+
+/* SCHEDULE */
+
+.schedule-booking{
+    max-width:500px;
+    width: 100%;
+}
+
+.city-side-walk{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border: 2px solid rgba(var(--dark-rgb), 0.1);
+    border-radius: 5px;
+    height: 50px;
+}
+.city-side-walk{
+    margin: 1rem 0;
+    border: 2px solid rgba(var(--dark-rgb), 0.1);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-light-dark);
+}
+.city-side-walk label{
+    color: var(--text-light-dark);
+    font-size: 14px;
+}
+.city-side-walk input{
+    width: 20px;
+    height: 20px;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-light-dark);
+    transition: all 0.3s ease;
+    accent-color: var(--primary);
+}
+.button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.primary-btn{
+    background: var(--primary);
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.primary-btn:hover{
+    background: var(--secondary);
+    color: #fff;
 }
