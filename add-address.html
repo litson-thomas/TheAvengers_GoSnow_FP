@@ -21,27 +21,27 @@
         <div class="schedule-booking py-2">
             <form>
                 <div class="booking-details-title">
-                    <a href="/index.html">
-                        < Go Back</a> <h2>My profile</h2>
+                    <a href="/address.html">
+                        < Go Back</a> <h2>Add new address</h2>
                 </div>
 
                 <div class="py-2">
 
                     <form>
                         <div class="gs-input-wrapper">
-                            <label for="user-name">Name</label>
-                            <input type="text" placeholder="Enter Name" name="user-name">
+                            <label for="address-line1">Address line 1</label>
+                            <input type="text" placeholder="Enter Address Line 1" name="address-line1">
                         </div>
                         <div class="gs-input-wrapper">
-                            <label for="phone-number">Phone Number</label>
-                            <input type="number" placeholder="Enter Phone Number" name="phone-number">
+                            <label for="address-line2">Address Line 2</label>
+                            <input type="number" placeholder="Enter  Address Line 2 (Optional)" name="address-line2">
                         </div>
                         <div class="gs-input-wrapper">
-                            <label for="place">Place</label>
-                            <input type="text" placeholder="Select Place" name="place">
+                            <label for="postal-code">Postal Code</label>
+                            <input type="text" placeholder="Enter Postal Code" name="postal-code">
                         </div>
                         <div class="button-wrapper">
-                            <button class="primary-btn" type="submit" id="updateProfile">Update Profile</button>
+                            <button class="primary-btn" type="submit" id="saveAddress">Add Address</button>
                         </div>
                     </form>
                 </div>
@@ -53,7 +53,9 @@
     <become-shoveler></become-shoveler>
     <gosnow-footer></gosnow-footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="components/header.js"></script>
     <script type="module" src="components/search.js"></script>
     <script type="module" src="components/featured_listing.js"></script>
@@ -62,9 +64,9 @@
     <script type="module" src="components/footer.js"></script>
     <script src="js/main.js"></script>
     <script src="js/schedule.js"></script>
-    <script src="./js/profile.js"></script>
+    <script src="./js/add-address.js"></script>
 
-
+    
 </body>
 
 </html>
