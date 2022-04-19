@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoSnow - Your Ultimate Snow removal assistance</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <gosnow-header></gosnow-header>
+
+    <div class="container">
+        <div class="login-wrapper">
+            <form>
+                <h2>Register</h2>
+                <div class="py-1">
+                    <a href="#">Existing User? Login here</a>
+                </div>
+                <div class="input-wrapper">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter Name" class="gs-input">
+                </div>
+                <div class="input-wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter Email" class="gs-input">
+                </div>
+                <div class="input-wrapper">
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" placeholder="Enter Phone" class="gs-input">
+                </div>
+                <div class="input-wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter Password" class="gs-input">
+                </div>
+                <div class="submit-wrapper">
+                    <button class="primary-btn w-100">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <gosnow-footer></gosnow-footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="components/header.js"></script>
+    <script type="module" src="components/footer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
