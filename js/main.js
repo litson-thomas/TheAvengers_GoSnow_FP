@@ -14,3 +14,6 @@
 //     document.documentElement.setAttribute('data-theme', targetTheme)
 //     localStorage.setItem('gosnow-them-mode', targetTheme);
 // };
+
+export const BASE_URL = 'https://snowapp.lcmaze.com/api/';
+export const CDN_URL = 'https://lcmaze.s3.ap-south-1.amazonaws.com/snowapp/assets/listing-images/';

@@ -1,18 +1,15 @@
 import './listing-card.js';
+import { BASE_URL, CDN_URL } from "../js/main.js";
 
-const array = [1,2, 3, 4, 5, 6, 7, 8];
+let shovelers = [];
 let list = ``;
 const template = document.createElement('template');
 
 class FeaturedListing extends HTMLElement {
+
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-
-        //set the listing 
-        this.setListing();
-        //set the ui
-        this.setUiData();
     }
 
     setUiData(){
@@ -31,12 +28,30 @@ class FeaturedListing extends HTMLElement {
     }
 
     setListing() {
-        array.forEach(item => {
+        shovelers.rows.forEach(item => {
             list += `
-                <listing-card></listing-card>
+                <listing-card 
+                id="${item.id}"
+                image="${CDN_URL}${item.shovler_images[0].image}" 
+                title="${item.title}" 
+                price="${item.one_four_price}"
+                ></listing-card>
             `
         });
+        //set the ui
+        this.setUiData();
     }
+
+    getShovelers(data){
+        try {
+            shovelers = data;
+            //set the listing 
+            this.setListing();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 }
 
 customElements.define('featured-listing', FeaturedListing);

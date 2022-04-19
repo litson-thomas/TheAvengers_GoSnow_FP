@@ -1,16 +1,15 @@
-const array = [1,2, 3, 4, 5, 6, 7, 8];
+import './listing-card.js';
+import { BASE_URL, CDN_URL } from "../js/main.js";
+
+let shovelers = [];
 let list = ``;
 const template = document.createElement('template');
 
 class HighRatedListing extends HTMLElement {
+    
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-
-        //set the listing 
-        this.setListing();
-        //set the ui
-        this.setUiData();
     }
 
     setUiData(){
@@ -18,7 +17,7 @@ class HighRatedListing extends HTMLElement {
             <link rel="stylesheet" href="css/styles.css">
             <div class="container py-2">
                 <div class="featured-listing">
-                    <h3>High Rated Listing</h3>
+                    <h3>Highest Rated</h3>
                     <div class="featured-list">
                         ${list}
                     </div>
@@ -29,23 +28,28 @@ class HighRatedListing extends HTMLElement {
     }
 
     setListing() {
-        array.forEach(item => {
+        shovelers.rows.forEach(item => {
             list += `
-                <div class="listing-card transition">
-                    <img src="https://lcmaze.s3.amazonaws.com/seraph-tuts-django-cdn/assets/uploads/content_thumb.webp">
-                    <div class="listing-card-info">
-                        <div class="details">
-                            <h4>Snow Removal</h4>
-                        </div>
-                        <p class="rating">&#9733; 4.2</p>
-                    </div>
-                    <div class="footer-details">
-                        <p class="address">123 Main St</p>
-                        <p class="price">$44</p>
-                    </div>
-                </div>
+                <listing-card 
+                id="${item.id}"
+                image="${CDN_URL}${item.shovler_images[0].image}" 
+                title="${item.title}" 
+                price="${item.one_four_price}"
+                ></listing-card>
             `
         });
+        //set the ui
+        this.setUiData();
+    }
+
+    getShovelers(data){
+        try {
+            shovelers = data;
+            //set the listing 
+            this.setListing();
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

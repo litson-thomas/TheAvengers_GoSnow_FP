@@ -2,7 +2,7 @@ const template = document.createElement('template');
 template.innerHTML = `
     <link rel="stylesheet" href="css/styles.css">
     <div class="listing-card transition">
-        <a class="save-icon active">&#10084;</a>
+        <a class="save-icon">&#10084;</a>
         <img src="https://lcmaze.s3.amazonaws.com/seraph-tuts-django-cdn/assets/uploads/content_thumb.webp">
         <div class="listing-card-info">
             <div class="details">
@@ -20,8 +20,12 @@ template.innerHTML = `
 class ListingCard extends HTMLElement {
     constructor() {
         super();
+        
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
+        this.shadowRoot.querySelector('.listing-card-info .details h4').textContent = this.getAttribute('title');
+        this.shadowRoot.querySelector('.listing-card img').src = this.getAttribute('image');
+        this.shadowRoot.querySelector('.listing-card .footer-details .price').textContent = "$" + this.getAttribute('price');
     }
 }
 
