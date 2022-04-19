@@ -26,14 +26,22 @@ function setValue() {
     
     let prev_btn = document.querySelector('.prev-img');
     let next_btn = document.querySelector('.next-img');
+
+    if(shoveler.shovler_images.length <= 1){
+        prev_btn.style.display = 'none';
+        next_btn.style.display = 'none';
+    }
+
     let book_now_btn = document.querySelector('#detailsBookNowBtn');
 
     prev_btn.addEventListener('click', function(){
+        document.getElementById('detailsImages').src = ""
         currentImageIndex == 0 ? currentImageIndex = shoveler.shovler_images.length - 1 : currentImageIndex--;
         document.getElementById('detailsImages').src = CDN_URL + shoveler.shovler_images[currentImageIndex].image;
     });
 
     next_btn.addEventListener('click', function(){
+        document.getElementById('detailsImages').src = ""
         currentImageIndex == shoveler.shovler_images.length - 1 ? currentImageIndex = 0 : currentImageIndex++;
         document.getElementById('detailsImages').src = CDN_URL + shoveler.shovler_images[currentImageIndex].image;
     });

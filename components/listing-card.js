@@ -41,8 +41,12 @@ class ListingCard extends HTMLElement {
             localStorage.setItem('savedListing', JSON.stringify(savedListing));
             saveButton.classList.toggle('active');
         });
-        const card = this.shadowRoot.querySelector('.listing-card');
+        const card = this.shadowRoot.querySelector('.listing-card-info');
+        const image = this.shadowRoot.querySelector('.listing-card img');
         card.addEventListener('click', () => {
+            window.location.href = `/details.html?id=${this.getAttribute('id')}`;
+        })
+        image.addEventListener('click', () => {
             window.location.href = `/details.html?id=${this.getAttribute('id')}`;
         })
     }
