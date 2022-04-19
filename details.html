@@ -25,7 +25,7 @@
                     </a>
                     <div class="images-gallery">
                         <div class="image">
-                            <img class="w-100" src="https://lcmaze.s3.amazonaws.com/seraph-tuts-django-cdn/assets/sliders/thumb_8.webp">
+                            <img class="w-100" id="detailsImages">
                         </div>
                     </div>
                     <a href="#" class="next-img">
@@ -33,31 +33,21 @@
                     </a>
                 </div>
                 <div class="actions">
-                    <a href="#" class="primary-btn">Message</a>
-                    <a href="#" class="primary-btn">Book Now</a>
+                    <a class="primary-btn">Message</a>
+                    <a class="primary-btn" id="detailsBookNowBtn">Book Now</a>
                 </div>
             </div>
             <div class="details">
                 <div class="details-top-items">
                     <div class="left-details">
-                        <h2>I will snow for you</h2>
-                        <p class="listing-author text-light-dark-color">by Litson Thomas  &nbsp;&nbsp;&#9679;&nbsp;&nbsp;  <span class="listing-details-rating">&#9733; 4.3</span> (10 reviews) </p>
+                        <h2 id="detailsTitle">I will snow for you</h2>
+                        <p class="listing-author text-light-dark-color" id="detailsAuthor">by Litson Thomas  &nbsp;&nbsp;&#9679;&nbsp;&nbsp;  <span class="listing-details-rating">&#9733; 4.3</span> (10 reviews) </p>
                     </div>
                     <div class="right-details">
-                        <h4 ></h4>
+                        <h4></h4>
                     </div>
                 </div>
-                <p class="listing-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nisi nulla numquam iure non consequatur delectus vel ipsum. Autem est ullam ab tenetur laborum molestiae reprehenderit temporibus quibusdam velit assumenda.
-                Id fuga et obcaecati ratione qui reprehenderit ipsa laboriosam repellendus eaque quisquam officiis adipisci quidem, error earum fugiat mollitia molestiae odio doloremque alias. Impedit deleniti nihil, laudantium totam quasi adipisci.
-                Amet sequi aspernatur neque? Expedita nam reprehenderit culpa maiores rem, cum aliquam at fugit id rerum officia consequatur ad quaerat nesciunt alias atque iure nobis officiis, sequi quisquam. Doloribus, recusandae.
-                    <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nisi nulla numquam iure non consequatur delectus vel ipsum. Autem est ullam ab tenetur laborum molestiae reprehenderit temporibus quibusdam velit assumenda.
-                Id fuga et obcaecati ratione qui reprehenderit ipsa laboriosam repellendus eaque quisquam officiis adipisci quidem, error earum fugiat mollitia molestiae odio doloremque alias. Impedit deleniti nihil, laudantium totam quasi adipisci.
-                Amet sequi aspernatur neque? Expedita nam reprehenderit culpa maiores rem, cum aliquam at fugit id rerum officia consequatur ad quaerat nesciunt alias atque iure nobis officiis, sequi quisquam. Doloribus, recusandae.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nisi nulla numquam iure non consequatur delectus vel ipsum. Autem est ullam ab tenetur laborum molestiae reprehenderit temporibus quibusdam velit assumenda.
-                Id fuga et obcaecati ratione qui reprehenderit ipsa laboriosam repellendus eaque quisquam officiis adipisci quidem, error earum fugiat mollitia molestiae odio doloremque alias. Impedit deleniti nihil, laudantium totam quasi adipisci.
-                Amet sequi aspernatur neque? Expedita nam reprehenderit culpa maiores rem, cum aliquam at fugit id rerum officia consequatur ad quaerat nesciunt alias atque iure nobis officiis, sequi quisquam. Doloribus, recusandae.</p>
+                <p class="listing-desc" id="detailsDesc"></p>
             </div>
         </div>
     </div>
@@ -67,12 +57,16 @@
     <become-shoveler></become-shoveler>
     <gosnow-footer></gosnow-footer>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="components/header.js"></script>
     <script type="module" src="components/search.js"></script>
     <script type="module" src="components/featured_listing.js"></script>
     <script type="module" src="components/become_shoveler.js"></script>
     <script type="module" src="components/footer.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/home.js"></script>
+    <script type="module" src="./js/details.js"></script>
 </body>
 </html>
