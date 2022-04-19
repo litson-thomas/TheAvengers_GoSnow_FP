@@ -108,7 +108,23 @@ a:hover{
 .transition{
     transition: all 0.3s ease;
 }
+.column {
+  float: left;
+}
 
+.left {
+  width: 50%;
+}
+
+.right {
+  width: 50%;
+
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* media query styles */
 @media (min-width: 768px) {
     .container {

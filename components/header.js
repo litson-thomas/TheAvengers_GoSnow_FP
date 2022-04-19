@@ -3,14 +3,18 @@ template.innerHTML = `
     <link rel="stylesheet" href="css/styles.css">
     <div class="header-wrapper">
         <div class="container header">
-            <h1 class="logo">GoSnow</h1>
+            <div class="header-details">
+                <h1 class="logo">Hey, <br> Welcome user!</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur 
+                adipiscing elit. <br> Sit venenatis non urna, suspendisse.</p>
+            </div>
             <nav>
                 <div class="links">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/messages.html">Messages</a></li>
                         <li><a href="/account.html">My Account</a></li>
-                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact-us.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="dark-mode">
