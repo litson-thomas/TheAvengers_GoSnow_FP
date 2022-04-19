@@ -26,6 +26,31 @@ class ListingCard extends HTMLElement {
         this.shadowRoot.querySelector('.listing-card-info .details h4').textContent = this.getAttribute('title');
         this.shadowRoot.querySelector('.listing-card img').src = this.getAttribute('image');
         this.shadowRoot.querySelector('.listing-card .footer-details .price').textContent = "$" + this.getAttribute('price');
+        this.checkIfSaved();
+        const saveButton = this.shadowRoot.querySelector('.listing-card .save-icon');
+        saveButton.addEventListener('click', () => {
+            let savedListing = localStorage.getItem('savedListing');
+            let id = Number(this.getAttribute('id'));
+
+            if(savedListing) savedListing = JSON.parse(savedListing);
+            else savedListing = [];
+            
+            if(savedListing.indexOf(id) != -1) savedListing.splice(savedListing.indexOf(id), 1);
+            else savedListing.push(id);
+
+            localStorage.setItem('savedListing', JSON.stringify(savedListing));
+            saveButton.classList.toggle('active');
+        });
+    }
+
+    checkIfSaved() {
+        let savedListing = localStorage.getItem('savedListing');
+        let id = Number(this.getAttribute('id'));
+
+        if(savedListing) savedListing = JSON.parse(savedListing);
+        else savedListing = [];
+
+        if(savedListing.indexOf(id) != -1) this.shadowRoot.querySelector('.listing-card .save-icon').classList.add('active');
     }
 }
 
