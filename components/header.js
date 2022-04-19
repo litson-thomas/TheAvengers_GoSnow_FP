@@ -11,7 +11,7 @@ template.innerHTML = `
             <nav>
                 <div class="links">
                     <ul>
-                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#">Messages</a></li>
                         <li class="dropdown"><a href="#">My Account</a>
                         <ul class="account-sublinks">
