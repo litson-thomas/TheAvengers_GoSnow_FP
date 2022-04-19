@@ -11,16 +11,16 @@ template.innerHTML = `
             <nav>
                 <div class="links">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/messages.html">Messages</a></li>
+                        <li><a href="">Home</a></li>
+                        <li><a href="messages.html">Messages</a></li>
                         <li class="dropdown"><a href="#">My Account</a>
                         <ul class="account-sublinks">
-                            <li><a href="/profile.html">My Profile</a></li>
-                            <li><a href="/address.html">My Address</a></li>
+                            <li><a href="profile.html">My Profile</a></li>
+                            <li><a href="address.html">My Address</a></li>
                         </ul>
                         </li>
-                        <li><a href="/saved.html">Saved</a></li>
-                        <li><a href="/contact-us.html">Contact</a></li>
+                        <li><a href="saved.html">Saved</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="dark-mode">
