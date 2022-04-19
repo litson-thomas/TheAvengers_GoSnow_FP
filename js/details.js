@@ -33,6 +33,7 @@ function setValue() {
     }
 
     let book_now_btn = document.querySelector('#detailsBookNowBtn');
+    let message_btn = document.querySelector('#detailsMessageBtn');
 
     prev_btn.addEventListener('click', function(){
         document.getElementById('detailsImages').src = ""
@@ -48,6 +49,11 @@ function setValue() {
 
     book_now_btn.addEventListener('click', function(){
         window.location.href = `/book-now.html?id=${shoveler.id}`;
+    })
+
+    message_btn.addEventListener('click', function(){
+        const user = firebase.auth().currentUser;
+        if(user) window.location.href = `/message.html?room=${user.uid}${shoveler.id}`;
     })
 }
 

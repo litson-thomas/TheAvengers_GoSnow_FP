@@ -10,62 +10,38 @@
 </head>
 <body>
 
-    <div class="home-header">
-        <gosnow-header></gosnow-header>
-        <gosnow-search></gosnow-search>
-    </div>
 
-
-    <div class="container py-2">
-        <div class="details-wrapper">
-            <div class="left-side">
-                <div class="images-wrapper">
-                    <a href="#" class="prev-img">
-                        <span class="details-img-icon"><</span>
-                    </a>
-                    <div class="images-gallery">
-                        <div class="image">
-                            <img class="w-100" id="detailsImages">
-                        </div>
-                    </div>
-                    <a href="#" class="next-img">
-                        <span class="details-img-icon">></span>
-                    </a>
-                </div>
-                <div class="actions">
-                    <a class="primary-btn">Message</a>
-                    <a class="primary-btn" id="detailsBookNowBtn">Book Now</a>
-                </div>
-            </div>
-            <div class="details">
-                <div class="details-top-items">
-                    <div class="left-details">
-                        <h2 id="detailsTitle">I will snow for you</h2>
-                        <p class="listing-author text-light-dark-color" id="detailsAuthor">by Litson Thomas  &nbsp;&nbsp;&#9679;&nbsp;&nbsp;  <span class="listing-details-rating">&#9733; 4.3</span> (10 reviews) </p>
-                    </div>
-                    <div class="right-details">
-                        <h4></h4>
+    <div class="single-chat-wrapper">
+        <div class="wrapper">
+            <div class="chat">
+                <div class="chat-header">
+                    <div>
+                        <a href="#" class="goback">< Go Back</a>
+                        <div style="height: 10px"></div>
+                        <div class="name">I will Shovel Snow for you</div>
+                        <small style="color: #000;">by Litson Thomas</small>
                     </div>
                 </div>
-                <p class="listing-desc" id="detailsDesc"></p>
+                <div class="chat-section"></div>
+                <div class="enter-chat">
+                    <form id="send-message">
+                        <input id="message-input" type="text" placeholder="Type message..." name="gs_message" autocomplete="off">
+                        <button type="submit" class="sign-out">SEND</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <featured-listing></featured-listing>
-    <become-shoveler></become-shoveler>
-    <gosnow-footer></gosnow-footer>
-
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
     <script type="module" src="components/header.js"></script>
     <script type="module" src="components/search.js"></script>
-    <script type="module" src="components/featured_listing.js"></script>
-    <script type="module" src="components/become_shoveler.js"></script>
     <script type="module" src="components/footer.js"></script>
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/auth.js"></script>
+    <script type="module" src="./js/message.js"></script>
 </body>
 </html>

@@ -208,3 +208,133 @@ body {
 }
 
 
+
+
+/* CHAT MESSAGING  */
+.single-chat-wrapper .wrapper{
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.single-chat-wrapper .chat{
+    background: var(--white);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-chat-wrapper .chat-header{
+    background: var(--primary);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.04);
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem;
+}
+.single-chat-wrapper .chat-header .goback{
+    color: var(--primary);
+    background: #fff;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+.single-chat-wrapper .chat-header .name{
+    color: #fff;
+    flex-grow: 1;
+}
+
+.single-chat-wrapper .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    background: #fff;
+}
+.single-chat-wrapper .chat-section{
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    position: relative;
+    overflow-y: auto;
+    height: calc(100% - 181px);
+}
+.single-chat-wrapper .chat-section .item{
+    display: flex;
+    max-width: 85%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+.single-chat-wrapper .chat-section .item img{
+    margin-right: 0.5rem;
+}
+.single-chat-wrapper .chat-section .item .message{
+    background: #fff;
+    color: #000;
+    padding: 1rem 1rem;
+    border-radius: 10px 10px 10px 0px;
+    font-size: 14px;
+}
+.single-chat-wrapper .chat-section .item .message h5{
+    margin-bottom: 8px;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+}
+.single-chat-wrapper .chat-section .item .message p{
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+.single-chat-wrapper .chat-section .item .message small{
+    font-size: 10px;
+    color: #424242;
+    opacity: 0.6;
+}
+.single-chat-wrapper .other-user{
+    justify-content: flex-end !important;
+    margin: 0 0 0 auto;
+}
+.single-chat-wrapper .other-user .message{
+    background: #140f31 !important;
+    color: #eee !important;
+    border-radius: 10px 10px 0px 10px !important;
+}
+.single-chat-wrapper .other-user .message small{
+    color: #ccc !important;
+}
+
+.single-chat-wrapper .enter-chat{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    background: var(--secondary);
+}
+.single-chat-wrapper .enter-chat form{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.single-chat-wrapper form input{
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    flex-grow: 1;
+}
+.single-chat-wrapper form button{
+    padding: 0 0.5rem;
+    font-size: 18px;
+    font-weight: 700;
+    background: var(--primary);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+}
