@@ -15,8 +15,6 @@
 //     localStorage.setItem('gosnow-them-mode', targetTheme);
 // };
 
-export const BASE_URL = 'https://snowapp.lcmaze.com/api/';
-export const CDN_URL = 'https://lcmaze.s3.ap-south-1.amazonaws.com/snowapp/assets/listing-images/';
  // Your web app's Firebase configuration
 
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -127,3 +125,7 @@ if(reset_form){
         });
     })
 }
+
+
+export const BASE_URL = 'https://snowapp.lcmaze.com/api/';
+export const CDN_URL = 'https://lcmaze.s3.ap-south-1.amazonaws.com/snowapp/assets/listing-images/';

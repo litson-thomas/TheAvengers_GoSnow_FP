@@ -25,6 +25,9 @@ class FeaturedListing extends HTMLElement {
             </div>
         `
         this.shadowRoot.appendChild(template.content.cloneNode(true));
+        if(this.getAttribute('title')){
+            this.shadowRoot.querySelector('h3').textContent = this.getAttribute('title');
+        }
     }
 
     setListing() {

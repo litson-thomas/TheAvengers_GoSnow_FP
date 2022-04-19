@@ -9,8 +9,8 @@ async function getShovelers(){
             method: 'get',
             url: BASE_URL + 'shovler?q=&order=id&order_type=ASC',
         })
-        featuredListing.getShovelers(response.data);
-        ratedListing.getShovelers(response.data);
+        if(featuredListing) featuredListing.getShovelers(response.data);
+        if(ratedListing) ratedListing.getShovelers(response.data);
 
     } catch (error) {
         console.log(error);
