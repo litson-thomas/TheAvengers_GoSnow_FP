@@ -44,10 +44,10 @@ class ListingCard extends HTMLElement {
         const card = this.shadowRoot.querySelector('.listing-card-info');
         const image = this.shadowRoot.querySelector('.listing-card img');
         card.addEventListener('click', () => {
-            window.location.href = `/details.html?id=${this.getAttribute('id')}`;
+            window.location.href = `details.html?id=${this.getAttribute('id')}`;
         })
         image.addEventListener('click', () => {
-            window.location.href = `/details.html?id=${this.getAttribute('id')}`;
+            window.location.href = `details.html?id=${this.getAttribute('id')}`;
         })
     }
 

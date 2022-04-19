@@ -3,12 +3,20 @@ const socket = io('https://snowapp.lcmaze.com', {path: '/socket.io/socket.io.js'
 // auth state check 
 let user = null;
 let room = null;
+let name = '';
+let uid = '';
+
+var chatSection = document.querySelector('.chat-section');
+var form = document.getElementById('send-message');
+var input = document.getElementById('message-input');
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         const url = new URL(window.location.href).searchParams;
         room = url.get('room');
-        const uid = user.uid;
-        user = user;
+        uid = user.uid;
+        name = user.displayName;
+        console.log(user);
         const join_data = {
             room: room,
             userid: uid
@@ -16,32 +24,29 @@ firebase.auth().onAuthStateChanged(function(user) {
         // JOIN ROOM 
         socket.emit('join_room', JSON.stringify(join_data));
 
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (input.value) {
+                // MESSAGE SEND EMIT
+                let data = {
+                    room: room,
+                    userUid: uid,
+                    user: {
+                        uid: uid,
+                        name: name,
+                    },
+                    message: input.value,
+                    createdAt: formatAMPM(),
+                    shovlerId: room.replace(uid, '')
+                }
+                socket.emit('message', JSON.stringify(data));
+                input.value = '';
+                addNewMessage(data);
+            }
+        });
+
     } else {
         window.location = 'login.html';
-    }
-});
-
-var form = document.getElementById('send-message');
-var input = document.getElementById('message-input');
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (input.value) {
-        // MESSAGE SEND EMIT
-        let data = {
-            room: room,
-            userUid: user.uid,
-            user: {
-                uid: user.uid,
-                name: user.displayName,
-            },
-            message: input.value,
-            createdAt: formatAMPM(),
-            shovlerId: room.replace(user.uid, '')
-        }
-        socket.emit('message', JSON.stringify(data));
-        input.value = '';
-        addNewMessage(data);
     }
 });
 
@@ -56,7 +61,7 @@ function addNewMessage(obj){
 
     // adding classes 
     item.classList.add('item');
-    if(obj.userUid === user.uid) item.classList.add('other-user');
+    if(obj.userUid === uid) item.classList.add('other-user');
     messageWrapper.classList.add('message');
     name.classList.add('name');
 

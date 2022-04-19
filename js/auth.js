@@ -13,22 +13,22 @@ export const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// function checkAuth(){
-//     firebase.auth().onAuthStateChanged(function(user) {
-//         console.log(window.location.pathname)
-//         if (user) {
-//             let url = window.location.pathname;
-//             if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
-//                 window.location = 'index.html';
-//             }
-//         } else {
-//             let url = window.location.pathname;
-//             if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
-//                 window.location = 'login.html';   
-//             }
-//         }
-//     });
-// }
+function checkAuth(){
+    firebase.auth().onAuthStateChanged(function(user) {
+        console.log(window.location.pathname)
+        if (user) {
+            let url = window.location.pathname;
+            if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
+                window.location = 'index.html';
+            }
+        } else {
+            let url = window.location.pathname;
+            if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
+                window.location = 'login.html';   
+            }
+        }
+    });
+}
 
 var register_form = document.querySelector("#registerForm");
 var login_form = document.querySelector("#loginForm");

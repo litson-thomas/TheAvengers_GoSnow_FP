@@ -114,7 +114,7 @@ body {
     margin-top: 1.5rem;
     font-weight: 400;
     font-size: 13px;
-    width: 100%;
+    width: fit-content;
     border-radius: 13px;
 }
 
@@ -289,7 +289,7 @@ body {
 }
 .single-chat-wrapper .chat-section .item .message small{
     font-size: 10px;
-    color: #424242;
+    color: var(--secondary) !important;
     opacity: 0.6;
 }
 .single-chat-wrapper .other-user{
@@ -297,9 +297,10 @@ body {
     margin: 0 0 0 auto;
 }
 .single-chat-wrapper .other-user .message{
-    background: #140f31 !important;
+    background: var(--primary) !important;
     color: #eee !important;
     border-radius: 10px 10px 0px 10px !important;
+    width: fit-content;
 }
 .single-chat-wrapper .other-user .message small{
     color: #ccc !important;
