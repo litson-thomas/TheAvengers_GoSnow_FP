@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoSnow - Your Ultimate Snow removal assistance</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="home-header">
+        <gosnow-header></gosnow-header>
+        <gosnow-search></gosnow-search>
+    </div>
+
+    <div class="container">
+        <div class="schedule-booking py-2">
+            <form>
+                <div class="booking-details-title">
+                    <a href="#">
+                        < Go Back</a> <h2>My profile</h2>
+                </div>
+
+                <div class="py-2">
+
+                    <form>
+                        <div class="gs-input-wrapper">
+                            <label for="user-name">Name</label>
+                            <input type="text" placeholder="Enter Name" name="user-name">
+                        </div>
+                        <div class="gs-input-wrapper">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="number" placeholder="Enter Phone Number" name="phone-number">
+                        </div>
+                        <div class="gs-input-wrapper">
+                            <label for="place">Place</label>
+                            <input type="text" placeholder="Select Place" name="place">
+                        </div>
+                        <div class="button-wrapper">
+                            <button class="primary-btn" type="submit" id="updateProfile">Update Profile</button>
+                        </div>
+                    </form>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <become-shoveler></become-shoveler>
+    <gosnow-footer></gosnow-footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="components/header.js"></script>
+    <script type="module" src="components/search.js"></script>
+    <script type="module" src="components/featured_listing.js"></script>
+    <script type="module" src="components/high_rated_listing.js"></script>
+    <script type="module" src="components/become_shoveler.js"></script>
+    <script type="module" src="components/footer.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/schedule.js"></script>
+</body>
+
+</html>

@@ -13,7 +13,12 @@ template.innerHTML = `
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/messages.html">Messages</a></li>
-                        <li><a href="/account.html">My Account</a></li>
+                        <li class="dropdown"><a href="#">My Account</a>
+                        <ul>
+                            <li><a href="/profile.html">My Profile</a></li>
+                            <li><a href="/address.html">My Address</a></li>
+                        </ul>
+                        </li>
                         <li><a href="/saved.html">Saved</a></li>
                         <li><a href="/contact-us.html">Contact</a></li>
                     </ul>
@@ -32,7 +37,9 @@ template.innerHTML = `
 class Header extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({
+            mode: 'open'
+        });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
