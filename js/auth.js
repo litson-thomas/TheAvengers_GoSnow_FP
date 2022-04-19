@@ -21,6 +21,7 @@ firebase.initializeApp(firebaseConfig);
 
 function checkAuth(){
     firebase.auth().onAuthStateChanged(function(user) {
+        console.log(window.location.pathname)
         if (user) {
             let url = window.location.pathname;
             if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
@@ -28,8 +29,8 @@ function checkAuth(){
             }
         } else {
             let url = window.location.pathname;
-            if(url != '/login.html' || url != '/register.html' || url != '/reset.html'){
-                window.location = 'login.html';
+            if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
+                window.location = 'login.html';   
             }
         }
     });
