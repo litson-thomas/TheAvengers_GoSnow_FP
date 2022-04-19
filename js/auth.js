@@ -1,12 +1,6 @@
-export const firebaseConfig = {
-    // apiKey: "AIzaSyABvpmSs0QyyKG7jffZnRiLgu7CmwSOxyY",
-    // authDomain: "loginauth-346a1.firebaseapp.com",
-    // projectId: "loginauth-346a1",
-    // storageBucket: "loginauth-346a1.appspot.com",
-    // messagingSenderId: "872118251681",
-    // appId: "1:872118251681:web:e00893a6a83f5bee0840e0",
-    // measurementId: "G-QB6DJ80K00"
+import { BASE_URL } from "./main.js";
 
+export const firebaseConfig = {
     apiKey: "AIzaSyD88vSXCFDKjAM7dAZDr29slTZhhQ0fYL8",
     authDomain: "madt-snowapp.firebaseapp.com",
     projectId: "madt-snowapp",
@@ -57,6 +51,10 @@ if(register_form){
 
     if(response){
         displayMessage("User registered successfully");
+        firebase.auth().signInWithEmailAndPassword(obj.email, obj.password)
+        .then((userCredential) => {
+            window.location = 'index.html';  
+        })
     }
     
   })
