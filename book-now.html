@@ -59,12 +59,50 @@
                     </div>
 
                     <div class="button-wrapper">
-                        <button class="primary-btn" type="submit">Confirm</button>
+                        <button class="primary-btn" type="submit" id="scheduleContinue">Schedule</button>
                     </div>
 
                 </div>
 
             </form>
+        </div>
+    </div>
+
+    <!-- confirm details -->
+    <div class="booking-confirm-details d-none">
+        <div class="confirm-details">
+            <div class="top-details">
+                <h3>Everything Good?!</h3>
+                <p class="text-light-dark-color">Please confirm your details below</p>
+            </div>
+            <small>BOOKING SCHEDULED ON</small>
+            <h5>Monday, 12th May 2020</h5>
+            <p class="address">123, Main Street, New York, NY 10001</p>
+            <div class="line">
+                <p class="label">Hours Requried</p>
+                <p>1-4 Hrs</p>
+            </div>
+            <div class="line">
+                <p class="label">City Side Walk</p>
+                <p>Yes</p>
+            </div>
+            <div class="divider"></div>
+            <div class="line">
+                <p class="label">Amount</p>
+                <p>$123</p>
+            </div>
+            <div class="line">
+                <p class="label">Total Tax</p>
+                <p>$10</p>
+            </div>
+            <div class="line">
+                <p class="label">Total</p>
+                <p><strong>$133</strong></p>
+            </div>
+            <div class="button-wrapper" style="margin-right: 10px;">
+                <button class="primary-btn w-100" id="modalCancel">Cancel</button>
+                <button class="primary-btn w-100">Confirm</button>
+            </div>
         </div>
     </div>
 
@@ -79,5 +117,6 @@
     <script type="module" src="components/become_shoveler.js"></script>
     <script type="module" src="components/footer.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/schedule.js"></script>
 </body>
 </html>

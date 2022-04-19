@@ -14,7 +14,7 @@ template.innerHTML = `
                         <li><a href="/">Home</a></li>
                         <li><a href="/messages.html">Messages</a></li>
                         <li><a href="/account.html">My Account</a></li>
-                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact-us.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="dark-mode">
