@@ -3,7 +3,11 @@ template.innerHTML = `
     <link rel="stylesheet" href="css/styles.css">
     <div class="header-wrapper">
         <div class="container header">
-            <h1 class="logo">GoSnow</h1>
+            <div class="header-details">
+                <h1 class="logo">Hey, <br> Welcome user!</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur 
+                adipiscing elit. Sit venenatis non urna, suspendisse.</p>
+            </div>
             <nav>
                 <div class="links">
                     <ul>
