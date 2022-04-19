@@ -5,10 +5,25 @@ let user = null;
 let room = null;
 let name = '';
 let uid = '';
+let chats = [];
 
 var chatSection = document.querySelector('.chat-section');
 var form = document.getElementById('send-message');
 var input = document.getElementById('message-input');
+
+async function getChats(room){
+    let chats = await fetch(`https://snowapp.lcmaze.com/api/messages?q=&order=id&order_type=ASC&room=${room}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    let chatsJson = await chats.json();
+    chats = chatsJson.rows;
+    for (let i = 0; i < chats.length; i++) {
+        addNewMessage(chats[i])
+    }
+}
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -16,11 +31,13 @@ firebase.auth().onAuthStateChanged(function(user) {
         room = url.get('room');
         uid = user.uid;
         name = user.displayName;
-        console.log(user);
         const join_data = {
             room: room,
             userid: uid
         };
+
+        getChats(room);
+
         // JOIN ROOM 
         socket.emit('join_room', JSON.stringify(join_data));
 

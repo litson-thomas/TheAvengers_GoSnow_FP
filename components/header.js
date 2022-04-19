@@ -9,7 +9,7 @@ template.innerHTML = `
                 adipiscing elit. <br> Sit venenatis non urna, suspendisse.</p>
             </div>
             <nav>
-                <div class="links">
+                <div class="links d-sm-none">
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         

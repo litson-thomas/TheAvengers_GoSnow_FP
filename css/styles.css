@@ -107,11 +107,10 @@ body {
 }
 
 .message {
-    margin: 0.5rem 0rem;
+    /* margin: 0.5rem 0rem; */
     background: #212121;
     color: #eaeaea;
     padding: 1rem 1rem;
-    margin-top: 1.5rem;
     font-weight: 400;
     font-size: 13px;
     width: fit-content;
@@ -266,7 +265,7 @@ body {
     max-width: 85%;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 .single-chat-wrapper .chat-section .item img{
     margin-right: 0.5rem;
