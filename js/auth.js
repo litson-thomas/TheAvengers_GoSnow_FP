@@ -13,22 +13,22 @@ export const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-function checkAuth(){
-    firebase.auth().onAuthStateChanged(function(user) {
-        console.log(window.location.pathname)
-        if (user) {
-            let url = window.location.pathname;
-            if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
-                window.location = 'index.html';
-            }
-        } else {
-            let url = window.location.pathname;
-            if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
-                window.location = 'login.html';   
-            }
-        }
-    });
-}
+// function checkAuth(){
+//     firebase.auth().onAuthStateChanged(function(user) {
+//         console.log(window.location.pathname)
+//         if (user) {
+//             let url = window.location.pathname;
+//             if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
+//                 window.location = 'index.html';
+//             }
+//         } else {
+//             let url = window.location.pathname;
+//             if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
+//                 window.location = 'login.html';   
+//             }
+//         }
+//     });
+// }
 
 var register_form = document.querySelector("#registerForm");
 var login_form = document.querySelector("#loginForm");
@@ -41,21 +41,22 @@ var message_value = document.querySelector(".message");
 if(register_form){
   register_form.addEventListener("submit", async function(e){
     e.preventDefault();
-    let obj = {};
-    obj['name'] = register_form.name.value;
-    obj['email'] = register_form.email.value;
-    obj['password'] = register_form.password.value;
-    obj['phone'] = register_form.phone.value;
-
-    let response = await axios.post(BASE_URL + 'user', obj);
-
-    if(response){
-        displayMessage("User registered successfully");
-        firebase.auth().signInWithEmailAndPassword(obj.email, obj.password)
-        .then((userCredential) => {
-            window.location = 'index.html';  
-        })
-    }
+   
+        let obj = {};
+        obj['name'] = register_form.name.value;
+        obj['email'] = register_form.email.value;
+        obj['password'] = register_form.password.value;
+        obj['phone'] = register_form.phone.value;
+    
+        let response = await axios.post(BASE_URL + 'user', obj);
+    
+        if(response){
+            displayMessage("User registered successfully");
+            firebase.auth().signInWithEmailAndPassword(obj.email, obj.password)
+            .then((userCredential) => {
+                window.location = 'index.html';  
+            })
+        }
     
   })
 }
@@ -70,6 +71,7 @@ if(login_form){
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
             displayMessage("User Logged In");
+            window.location = 'index.html';  
         })
         .catch((error) => {
             displayMessage(error.message);
@@ -86,6 +88,7 @@ if(reset_form){
         firebase.auth().sendPasswordResetEmail(email)
         .then((userCredential) => {
             displayMessage("Email has been send to your email");
+            window.location = 'login.html';  
         })
         .catch((error) => {
             displayMessage(error.message);

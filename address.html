@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
     <div class="home-header">
@@ -17,26 +19,32 @@
 
     <div class="container">
         <div class="schedule-booking py-2">
-                <div class="booking-details-title">
-                    <a href="#">
-                        < Go Back</a> <h2>My Addresses</h2>
-                </div>
+            <div class="booking-details-title">
+                <a href="/index.html">
+                    < Go Back</a> <h2>My Addresses</h2>
+            </div>
         </div>
     </div>
-
-    <address-listing></address-listing>
-
+    <div class="container">
+        <address-listing></address-listing>
+        <div class="button-wrapper">
+            <button class="primary-btn" type="submit" id="addAddress">Add Address</button>
+        </div>
+    </div>
     <become-shoveler></become-shoveler>
     <gosnow-footer></gosnow-footer>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js" integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+        integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="components/header.js"></script>
     <script type="module" src="components/search.js"></script>
     <script type="module" src="components/address_listing.js"></script>
     <script type="module" src="components/become_shoveler.js"></script>
     <script type="module" src="components/footer.js"></script>
+    <script type="module" src="./js/address.js"></script>
 
     <script type="module">
         import { BASE_URL } from "./js/main.js";
@@ -46,11 +54,13 @@
             try {
                 let response = await axios({
                     method: 'get',
-                    url: BASE_URL + 'address',
+                    url: BASE_URL + 'address?userUid=ROlzHUoS1UXfrMrDbsmuV2g44IG3',
+
                 })
                 if(addressListing) addressListing.setAddresses(response.data);
         
             } catch (error) {
+                debugger;
                 console.log(error);
             }
         }
