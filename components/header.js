@@ -14,7 +14,7 @@ template.innerHTML = `
                         <li><a href="/">Home</a></li>
                         <li><a href="/messages.html">Messages</a></li>
                         <li class="dropdown"><a href="#">My Account</a>
-                        <ul>
+                        <ul class="account-sublinks">
                             <li><a href="/profile.html">My Profile</a></li>
                             <li><a href="/address.html">My Address</a></li>
                         </ul>

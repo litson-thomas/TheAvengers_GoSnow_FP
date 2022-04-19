@@ -53,33 +53,23 @@ firebase.initializeApp(firebaseConfig);
   var message_value = document.querySelector(".message");
   
 
- // user register
-  if(register_form){
-  register_form.addEventListener("submit",function(e){
-      e.preventDefault();
-      let name = register_form.name.value;
-      let email = register_form.email.value;
-      let password = register_form.password.value;
-      let phone = register_form.phone.value;
+// user register
+if(register_form){
+  register_form.addEventListener("submit", async function(e){
+    e.preventDefault();
+    let obj = {};
+    obj['name'] = register_form.name.value;
+    obj['email'] = register_form.email.value;
+    obj['password'] = register_form.password.value;
+    obj['phone'] = register_form.phone.value;
 
-      console.log(email,password)
-      
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    window.location= 'index.html';
-   
-    console.log("USER CREATED")
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    let response = await axios.post(BASE_URL + 'user', obj);
+
+    if(response){
+        console.log(response);
+        // window.location= 'index.html';
+    }
     
-    message.style.display = 'block';
-    message_value.innerText = error.message;
-    console.log("Error occured",errorMessage)
-  });
   })
 }
 
