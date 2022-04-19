@@ -18,13 +18,13 @@ function checkAuth(){
         console.log(window.location.pathname)
         if (user) {
             let url = window.location.pathname;
-            if(url == '/login.html' || url == '/register.html' || url == '/reset.html'){
+            if(url.includes('login.html') || url.includes('register.html') || url.includes('reset.html')){
                 window.location = 'index.html';
             }
         } else {
             let url = window.location.pathname;
-            if(url != '/login.html' && url != '/register.html' && url != '/reset.html'){
-                window.location = 'login.html';   
+            if(!url.includes('login.html') || !url.includes('register.html') || !url.includes('reset.html')){
+                window.location = 'login.html';  
             }
         }
     });
