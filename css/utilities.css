@@ -97,6 +97,14 @@ a:hover{
     display: none !important;
 }
 
+.w-100{
+    width: 100% !important;
+}
+
+.mb-1{
+    margin-bottom: 1rem;
+}
+
 .transition{
     transition: all 0.3s ease;
 }

@@ -149,5 +149,65 @@
     align-items: center;
     width: 100%;
     margin: 2rem 0;
+    flex-wrap: wrap;
     color: var(--text-light-dark);
+}
+
+/* LOGIN PAGE  */
+.primary-btn{
+    background: var(--primary);
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.primary-btn:hover{
+    background: var(--text-dark);
+    transition: all 0.3s ease;
+}
+.gs-input{
+    padding: 10px;
+    width: 100%;
+    background: var(--white);
+    border-radius: 10px;
+    border: 2px solid rgba(var(--primary-rgb), 0.6);
+    padding-left: 1rem;
+    margin-right: 0.5rem;
+    flex: 1;
+}
+.gs-input:focus,
+.gs-input:active{
+    border: 2px solid rgba(var(--primary-rgb), 1) !important;
+}
+form{
+    max-width: 450px;
+    margin: 1.5rem 0;
+}
+form h2{
+    margin-bottom: 1rem;
+}
+.input-wrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.input-wrapper label{
+    font-size: 0.9rem;
+    color: var(--text-light-dark);
+    margin-bottom: 0.5rem;
+}
+.form-button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.login-wrapper{
+    max-width: 500px;
+    width: 100%;
+    margin: 4rem auto;
 }
