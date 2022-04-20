@@ -23,7 +23,7 @@ function checkAuth(){
             }
         } else {
             let url = window.location.pathname;
-            if(!url.includes('login.html') || !url.includes('register.html') || !url.includes('reset.html')){
+            if(!url.includes('login.html') && !url.includes('register.html') && !url.includes('reset.html')){
                 window.location = 'login.html';  
             }
         }
